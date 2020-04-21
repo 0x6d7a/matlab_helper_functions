@@ -1,5 +1,6 @@
-function ind = CFAR2Ddetection(rsp, NTCells, NGCells, PD)
+function [output, ind] = CFAR2Ddetection(rsp, NTCells, NGCells, PD)
     [row, col] = size(rsp);
+    output = zeros(row, col);
     inds_c = [];
     for i=1:col
         xxx = rsp(:,i);
@@ -24,4 +25,9 @@ function ind = CFAR2Ddetection(rsp, NTCells, NGCells, PD)
     end
 
     ind = intersect(inds_r, inds_c);
+    for i = 1:length(ind)
+        ij = ind2ij(rsp, ind(i)); 
+        output(ij(1), ij(2)) = 1;
+    end
+    
 end

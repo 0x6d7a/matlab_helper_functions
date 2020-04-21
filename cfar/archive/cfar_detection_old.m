@@ -1,4 +1,4 @@
-function [idx, thrs] = cfar_detection(arr, num_train, num_guard, rate_fa)
+function [idx, thrs] = cfar_detection_old(arr, num_train, num_guard, rate_fa)
     
     idx = [];
     thrs = NaN(length(arr),1);
