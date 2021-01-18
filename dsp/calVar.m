@@ -1,4 +1,8 @@
 function output = calVar(arr, window)
+    [r, c] = size(arr);
+    if(r > c)
+        arr = arr';
+    end
     N = window;
     l = length(arr);
     output = zeros(1, l);
