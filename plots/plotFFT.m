@@ -1,4 +1,4 @@
-function plotFFT(x, fs, N)
+function X = plotFFT(x, fs, N)
 figure;
 subplot(2,1,1); 
 plot(x); 
